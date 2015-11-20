@@ -1,0 +1,46 @@
+<div class="container-fluid" ng-repeat="track in playlist">
+   <div class="row">
+    <div class="col col-sm-6">
+      <a ui-sref="track({id:'{{linkify(track.track.name)}}'})">
+        <div class="h2">
+          {{track.track.name}}<br/>
+          <small><strong>{{track.track.artists[0].name}}</strong></small>
+        </div>
+      </a>
+    </div>
+    <div class="col-xs-2">
+      comments
+    </div>
+    <div class="col-xs-3">
+      rating
+    </div>
+    <div class="col-xs-1">
+      play
+    </div>
+  </div>
+</div>
+
+<!--
+<table class="table table-hover">
+  <tr ng-repeat="track in playlist">
+    <a ui-sref="track({id:'{{track.track.name}}'})">
+    <td>
+      <h3>
+        {{track.track.name}}<br>
+        <small><strong>{{track.track.artists[0].name}}</strong></small>
+      </h3>
+    </td>
+    <td class="col-xs-2">
+      comments
+    </td>
+    <td class="col-xs-3">
+      rating
+    </td></a>
+    <td class="col-xs-1">
+      play
+    </td>
+  </tr>
+</table>
+-->
+
+
