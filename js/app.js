@@ -18,7 +18,7 @@ angular.module('app', ['spotify', 'ui.router'])
     })
     .state('track', {
       url: "/track/:id",
-      template: '<h1>hey!</h1>'
+      templateUrl: 'song.html'
     })
   
 });

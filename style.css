@@ -2,10 +2,12 @@ h1 {
   font-family: 'Nothing You Could Do', cursive;
 }
 
-.col {
-  border: solid green;
+.main-song-stats {
+  line-height: 100px;
 }
 
-.row {
-  border: solid red;
+@media (max-width: 767px) {
+  .main-song-stats {
+    line-height: 50px;
+  }
 }

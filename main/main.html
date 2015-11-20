@@ -1,20 +1,20 @@
 <div class="container-fluid" ng-repeat="track in playlist">
-   <div class="row">
+  <a ui-sref="track({id:'{{linkify(track.track.name)}}'})">
+  <div class="row">
     <div class="col col-sm-6">
-      <a ui-sref="track({id:'{{linkify(track.track.name)}}'})">
-        <div class="h2">
-          {{track.track.name}}<br/>
-          <small><strong>{{track.track.artists[0].name}}</strong></small>
-        </div>
-      </a>
+      <div class="h2">
+        {{track.track.name}}<br/>
+        <small><strong>{{track.track.artists[0].name}}</strong></small>
+      </div>
     </div>
-    <div class="col-xs-2">
-      comments
-    </div>
-    <div class="col-xs-3">
+    <div class="main-song-stats col-xs-6 col-sm-3">
       rating
     </div>
-    <div class="col-xs-1">
+    <div class="main-song-stats col-xs-4 col-sm-2">
+      comments
+    </div>
+    </a>
+    <div class="main-song-stats col-xs-2 col-sm-1">
       play
     </div>
   </div>
