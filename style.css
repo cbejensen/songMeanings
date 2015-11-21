@@ -2,6 +2,20 @@ a:hover {
   text-decoration: none;
 }
 
+.comments-header > div {
+  margin: 0;
+  line-height: 50px;
+}
+
+.comments-header div:nth-child(even),
+.comment-title div:nth-child(even) {
+  text-align: right;
+}
+
+.comment-name {
+  font-weight: bold;
+}
+
 h1 {
   font-family: 'Nothing You Could Do', cursive;
 }
