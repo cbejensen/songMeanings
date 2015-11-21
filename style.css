@@ -6,6 +6,15 @@ h1 {
   font-family: 'Nothing You Could Do', cursive;
 }
 
+.lyric-num, .lyric-line {
+  display: inline-block;
+}
+
+.lyric-num {
+  width: 5%;
+  font-weight: bold;
+}
+
 .main-song-stats {
   line-height: 100px;
 }

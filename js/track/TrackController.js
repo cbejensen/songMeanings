@@ -1,5 +1,5 @@
 angular.module('TrackSuite')
-.controller('TrackController', function($scope, $stateParams, trackService, Spotify) {
+.controller('TrackController', function($scope, $stateParams, trackService, $firebaseObject, Spotify) {
   
   $scope.getTrack = function(id) {
     trackService.getTrack(id).then(function(data) {
@@ -9,5 +9,7 @@ angular.module('TrackSuite')
   }
   $scope.getTrack($stateParams.id);
   
+  var ref = new Firebase("https://song-meanings.firebaseio.com");
+  $scope.lyrics = $firebaseObject(ref);
   
 })
