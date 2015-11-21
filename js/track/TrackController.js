@@ -10,6 +10,6 @@ angular.module('TrackSuite')
   $scope.getTrack($stateParams.id);
   
   var ref = new Firebase("https://song-meanings.firebaseio.com");
-  $scope.lyrics = $firebaseObject(ref);
+  $scope.trackData = $firebaseObject(ref);
   
 })

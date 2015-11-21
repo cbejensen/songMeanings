@@ -1,8 +1,12 @@
 <h1>{{track.name}}</h1>
 
 <div class="lyric-container">
-  <div ng-repeat="line in lyrics[track.name.toLowerCase()] track by $index">
-    <div class="lyric-num">{{$index + 1}}</div>
-    <div class="lyric-line">{{line}}</div>
+  <div ng-repeat="line in trackData[track.name.toLowerCase()].lyrics track by $index">
+    <div class="container-fluid">
+     <div class="row">
+        <div class="lyric-num col-xs-1">{{$index + 1}}</div>
+        <div class="lyric-line col-xs-10">{{line}}</div>
+      </div>
+    </div>
   </div>
 </div>
