@@ -14,12 +14,16 @@ h1 {
   font-weight: bold;
 }
 
-.main-song-stats {
+.main-track-stats {
   line-height: 100px;
 }
 
-.row:hover {
+.highlight:hover {
   background-color: #f0f0f0;
+}
+
+.track-stats {
+  margin: 20px 0;
 }
 
 @media (max-width: 767px) {

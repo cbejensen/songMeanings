@@ -1,12 +1,28 @@
 <h1>{{track.name}}</h1>
 
-<div class="lyric-container">
+<div class="track-stats container-fluid">
+  <div class="row">
+    <div class="col-xs-2">
+      <a href="{{track.preview_url}}">
+        <div ng-click="previewTrack(track.id)" class="glyphicon glyphicon-play-circle"></div>
+      </a>
+    </div>
+    <div class="col-xs-5">Rating: </div>
+    <div class="col-xs-5">
+      <div class="glyphicon glyphicon-comment"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
   <div ng-repeat="line in trackData[track.name.toLowerCase()].lyrics track by $index">
-    <div class="container-fluid">
-     <div class="row">
-        <div class="lyric-num col-xs-1">{{$index + 1}}</div>
+    <div class="row highlight">
+      <div class="lyric-num col-xs-1">{{$index + 1}}</div>
+      <div><!-- improves user experience when copying and pasting lyrics-->
         <div class="lyric-line col-xs-10">{{line}}</div>
       </div>
     </div>
   </div>
 </div>
+
+
