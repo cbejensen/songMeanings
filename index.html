@@ -8,12 +8,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body ng-controller="MainController">
-  
-  <button ng-click="login()">Log In</button>
-  <a ui-sref="main"><h1>TRACK SUITE</h1></a>
-  
-  <div ui-view></div>
-  
+  <div class="container-fluid">
+    <button ng-click="login()">Log In</button>
+    <a ui-sref="main"><h1>TRACK SUITE</h1></a>
+
+    <div ui-view></div>
+  </div>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
