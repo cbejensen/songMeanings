@@ -1,4 +1,4 @@
-angular.module('app', ['spotify', 'ui.router'])
+angular.module('TrackSuite', ['ui.router', 'firebase', 'spotify'])
 .config(function (SpotifyProvider, $stateProvider, $urlRouterProvider) {
   SpotifyProvider.setClientId('456095fae6884551b223950e2a72f04a');
   SpotifyProvider.setRedirectUri('http://localhost:8080/auth');
@@ -10,15 +10,11 @@ angular.module('app', ['spotify', 'ui.router'])
   $stateProvider
     .state('main', {
       url: "/",
-      templateUrl: "main.html"
-    })
-    .state('sorry', {
-      url: "/sorry",
-      templateUrl: "sorry.html",
+      templateUrl: "js/main/main.html"
     })
     .state('track', {
       url: "/track/:id",
-      templateUrl: 'song.html'
+      templateUrl: 'js/track/track.html',
+      controller: 'TrackController',
     })
-  
 });
