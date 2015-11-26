@@ -1,9 +1,13 @@
-<h1>{{track.name}}</h1>
+<div class="loading" ng-if="!loaded" >
+  <img src="http://www.video-force.com/wp-content/uploads/2015/10/loading.gif">
+</div>
+
+<h1>{{spotifyTrack.name}}</h1>
 <div class="track-stats container-fluid">
   <div class="row">
     <div class="col-xs-2">
-      <a href="{{track.preview_url}}">
-        <div ng-click="previewTrack(track.id)" class="glyphicon glyphicon-play-circle"></div>
+      <a href="{{spotifyTrack.preview_url}}">
+        <div ng-click="previewTrack(spotifyTrack.id)" class="glyphicon glyphicon-play-circle"></div>
       </a>
     </div>
     <div class="col-xs-5">Rating: </div>
@@ -14,10 +18,10 @@
 </div>
 
 <div class="container-fluid">
-  <div ng-repeat="line in trackData[track.name.toLowerCase()].lyrics track by $index">
+  <div ng-repeat="line in trackData.lyrics track by $index">
     <div class="row highlight">
       <div class="lyric-num col-xs-1">{{$index + 1}}</div>
-      <div><!-- improves user experience when copying and pasting lyrics-->
+      <div><!-- this div improves copy/paste lyrics experience -->
         <div class="lyric-line col-xs-10">{{line}}</div>
       </div>
     </div>
@@ -28,14 +32,20 @@
   <div class="comments-header row">
     <div class="comments-header-title h3 col-xs-6">COMMENTS</div>
     <div class="col-xs-6">
-      <button class="btn btn-success btn-xs">Add Comment</button>
+      <button class="btn btn-success btn-xs" ng-click="showAddCommentForm = !showAddCommentForm">
+        Add Comment
+      </button>
     </div>
   </div>
-  <div class="comment-title row">
-    <div class="comment-name col-xs-6">Name</div>
-    <div class="comment-date col-xs-6">Date</div>
+  <add-comment-form></add-comment-form><!-- see addComment.html -->
+  <div ng-repeat="comment in trackData.comments">
+    <div class="comment-title row">
+      <div class="comment-name col-xs-6">{{comment.name}}</div>
+      <div class="comment-date col-xs-6">{{comment.timestamp | relativeDate}}</div>
+    </div>
+    <div class="comment-msg">{{comment.msg}}</div>
+    <hr>
   </div>
-  <div class="comment-message">Message</div>
 </div>
 
 

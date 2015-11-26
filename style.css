@@ -16,8 +16,26 @@ a:hover {
   font-weight: bold;
 }
 
+.comment-msg {
+  margin: 2% 5%;
+}
+
 h1 {
   font-family: 'Nothing You Could Do', cursive;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: white;
+  z-index: 9999;
+}
+
+.loading > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 .lyric-num, .lyric-line {
