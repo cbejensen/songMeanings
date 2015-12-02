@@ -9,7 +9,7 @@ angular.module('TrackSuite')
   
   var ref = new Firebase("https://song-meanings.firebaseio.com");
   
-  function login() {
+  function register() {
     // we would probably save a profile when we register new users on our site
     // we could also read the profile to see if it's null
     // here we will just simulate this with an isNewUser boolean
@@ -22,7 +22,6 @@ angular.module('TrackSuite')
         // use them in Security and Firebase Rules, and show profiles
         ref.child("users").child(authData.uid).set({
           provider: authData.provider,
-          name: getName(authData)
         });
       }
     });
@@ -40,15 +39,15 @@ angular.module('TrackSuite')
     }
   }
   
-  this.fbookLogin = function() {
-    ref.authWithOAuthPopup("facebook", function(error, authData) {
+  this.login = function(service) {
+    ref.authWithOAuthPopup(service, function(error, authData) {
       if (error) {
         console.log("Login Failed!", error);
       } else {
         console.log("Authenticated successfully with payload:", authData);
       }
     });
-    login();
+    register();
   }
   
   this.logout = function() {

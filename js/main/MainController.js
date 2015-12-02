@@ -1,10 +1,14 @@
 angular.module('TrackSuite')
 .controller('MainController', function($scope, mainService, Spotify) {
   
-  $scope.login = function() {
+  $scope.spotifyAuth = function() {
     Spotify.login().then(function() {
       $scope.getPlaylist();
     }) 
+  }
+  
+  $scope.login = function(service) {
+     mainService.login(service);
   }
   
   $scope.logout = function() {

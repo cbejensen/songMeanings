@@ -10,10 +10,11 @@
 <body ng-controller="MainController">
  
   <div class="container-fluid">
-    <button ng-click="login()">Log In</button>
+    <button ng-click="spotifyAuth()">Log In</button>
     <a ui-sref="main"><h1>TRACK SUITE</h1></a>
     
-    <button ng-click="fbookLogin()">Login w/ Facebook</button>
+    <button ng-click="login('facebook')">Login w/ Facebook</button>
+    <button ng-click="login('google')">Login w/ Google</button>
     <button ng-click="logout()">Log Out</button>
     <div ui-view></div>
     
