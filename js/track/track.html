@@ -10,9 +10,12 @@
         <div ng-click="previewTrack(spotifyTrack.id)" class="glyphicon glyphicon-play-circle"></div>
       </a>
     </div>
-    <div class="col-xs-5">Rating: </div>
-    <div class="col-xs-5">
-      <div class="glyphicon glyphicon-comment"></div>
+    <div class="col-xs-5">Rating: <!--TODO: average rating--></div>
+    <div class="testing col-xs-5">
+      <a href="#/track/{{spotifyTrack.id}}#comments">
+        <span>{{comments.length}}</span>
+        <div class="glyphicon glyphicon-comment conehead"></div>
+      </a>
     </div>
   </div>
 </div>
@@ -28,7 +31,7 @@
   </div>
 </div>
 
-<div class="comments-container container-fluid">
+<div id="comments" class="comments-container container-fluid">
   <div class="comments-header row">
     <div class="comments-header-title h3 col-xs-6">COMMENTS</div>
     <div class="col-xs-6">
@@ -38,7 +41,7 @@
     </div>
   </div>
   <add-comment-form></add-comment-form><!-- see addComment.html -->
-  <div ng-repeat="comment in trackData.comments">
+  <div ng-repeat="comment in comments | orderBy:'timestamp':reverse">
     <div class="comment-title row">
       <div class="comment-name col-xs-6">{{comment.name}}</div>
       <div class="comment-date col-xs-6">{{comment.timestamp | relativeDate}}</div>

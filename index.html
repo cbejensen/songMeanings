@@ -8,10 +8,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body ng-controller="MainController">
+ 
   <div class="container-fluid">
     <button ng-click="login()">Log In</button>
     <a ui-sref="main"><h1>TRACK SUITE</h1></a>
-
+    
+    <button ng-click="fbookLogin()">Login w/ Facebook</button>
+    <button ng-click="logout()">Log Out</button>
     <div ui-view></div>
     
   </div>
