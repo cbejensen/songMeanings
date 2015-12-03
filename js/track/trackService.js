@@ -7,13 +7,4 @@ angular.module('TrackSuite')
     });
   }
   
-  this.authorize = function(ref) {
-    var authData = ref.getAuth();
-    if (authData) {
-      console.log("User " + authData.uid + " is logged in with " + authData.provider);
-    } else {
-      console.log("User is logged out");
-    }
-  }
-  
 });

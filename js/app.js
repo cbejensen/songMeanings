@@ -1,4 +1,4 @@
-angular.module('TrackSuite', ['ui.router', 'firebase', 'spotify', 'relativeDate'])
+angular.module('TrackSuite', ['ui.router', 'firebase', 'spotify'])
 .config(function (SpotifyProvider, $stateProvider, $urlRouterProvider) {
   SpotifyProvider.setClientId('456095fae6884551b223950e2a72f04a');
   SpotifyProvider.setRedirectUri('http://localhost:8080/auth');

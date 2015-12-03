@@ -35,18 +35,25 @@
   <div class="comments-header row">
     <div class="comments-header-title h3 col-xs-6">COMMENTS</div>
     <div class="col-xs-6">
-      <button class="btn btn-success btn-xs" ng-click="showAddCommentForm = !showAddCommentForm">
+      <button class="btn btn-success btn-xs" id="addCom" ng-click="addComment()">
         Add Comment
       </button>
     </div>
   </div>
-  <add-comment-form></add-comment-form><!-- see addComment.html -->
-  <div ng-repeat="comment in comments | orderBy:'timestamp':reverse">
+  <div id="add-comment-form"><!-- ng-show="showAddCommentForm"-->
+    <form>
+      <div class="add-comment-msg">Insert your two cents</div>
+      <textarea id="test123" ng-model="newComment"></textarea>
+      <button ng-click="submitComment()">Submit</button>
+      <button ng-click="showAddCommentForm = false">Cancel</button>
+    </form>
+  </div>
+  <div ng-repeat="comment in comments | orderBy:'-timestamp'">
     <div class="comment-title row">
       <div class="comment-name col-xs-6">{{comment.name}}</div>
-      <div class="comment-date col-xs-6">{{comment.timestamp | relativeDate}}</div>
+      <div class="comment-date col-xs-6">{{showTimestamp(comment.timestamp)}}</div>
     </div>
-    <div class="comment-msg">{{comment.msg}}</div>
+    <div class="comment-msg">{{comment.comment}}</div>
     <hr>
   </div>
 </div>

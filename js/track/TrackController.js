@@ -1,5 +1,5 @@
 angular.module('TrackSuite')
-.controller('TrackController', function($scope, $stateParams, trackService, $firebaseObject, $firebaseArray, Spotify) {
+.controller('TrackController', function($scope, $stateParams, trackService, mainService, $firebaseObject, $firebaseArray, Spotify) {
   
   var ref = new Firebase("https://song-meanings.firebaseio.com/");
   
@@ -9,7 +9,6 @@ angular.module('TrackSuite')
       $scope.trackRef = ref.child("tracks/" + data.name);
       $scope.trackData = $firebaseObject($scope.trackRef);
       $scope.comments = $firebaseArray($scope.trackRef.child("comments/"))
-      console.log($scope.comments)
       $scope.loaded = true;
     });
   }
@@ -17,18 +16,41 @@ angular.module('TrackSuite')
   
   $scope.showAddCommentForm = false;
   
+  var verifyAuth = function(func) {
+    var authData = mainService.verifyAuth(ref);
+    if (authData) {
+      func(authData);
+    } else {
+      alert('Please log in first')
+    }
+  }
+  
+  $scope.showTimestamp = function(timestamp) {
+    return moment(timestamp).fromNow()
+  }
+  
+  $scope.verifyAuth = function() {
+    return mainService.verifyAuth(ref);
+  }
+  
   $scope.addComment = function() {
-    trackService.authorize(ref);
-    $scope.newComment.name = "Fred"; // TODO: delete this when user accounts are set up
-    $scope.newComment.timestamp = new Date().toString();
-    var commentsRef = new Firebase($scope.trackRef + "/comments/");
-    $scope.comments = $firebaseArray(commentsRef);
-    $scope.comments.$add($scope.newComment).then(function(ref) {
-      console.log('added comment with ID:', ref.key());
+    verifyAuth(function() {
+      $scope.showAddCommentForm = !$scope.showAddCommentForm;
+    });
+  }
+  
+  $scope.submitComment = function() {
+    verifyAuth(function(authData) {
+      var commentsRef = new Firebase($scope.trackRef + "/comments/");
+      commentsRef.push({
+        name: authData.facebook.displayName,
+        comment: $scope.newComment,
+        timestamp: Date.now()
+      })
+      //cleanup
+      $scope.showAddCommentForm = false;
+      $scope.newComment.msg = '';
     })
-    //cleanup
-    $scope.showAddCommentForm = false;
-    $scope.newComment.msg = '';
   }
   
   // alerts user if no preview of track is available
