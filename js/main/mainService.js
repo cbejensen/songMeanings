@@ -1,13 +1,13 @@
 angular.module('TrackSuite')
 .service('mainService', function(Spotify) {
   
+  var ref = new Firebase("https://song-meanings.firebaseio.com");
+
   this.getPlaylist = function() {
     return Spotify.getPlaylist('1263870506', '3qBffDvEZBj0m5RDhxY8XD').then(function (data) {
       return data;
     });
   }
-  
-  var ref = new Firebase("https://song-meanings.firebaseio.com");
   
   this.login = function(service) {
     ref.authWithOAuthPopup(service, function(error, authData) {
@@ -33,7 +33,7 @@ angular.module('TrackSuite')
     }
   }
   
-  this.verifyAuth = function(ref) {
+  this.verifyAuth = function() {
     var authData = ref.getAuth();
     if (authData) {
       return authData;

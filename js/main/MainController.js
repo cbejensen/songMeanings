@@ -8,7 +8,7 @@ angular.module('TrackSuite')
   }
   
   $scope.login = function(service) {
-     mainService.login(service);
+    mainService.login(service);
   }
   
   $scope.logout = function() {

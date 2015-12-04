@@ -1,12 +1,10 @@
 angular.module('TrackSuite')
 .controller('TrackController', function($scope, $stateParams, trackService, mainService, $firebaseObject, $firebaseArray, Spotify) {
   
-  var ref = new Firebase("https://song-meanings.firebaseio.com/");
-  
   $scope.getTrack = function(id) {
     trackService.getTrack(id).then(function(data) {
       $scope.spotifyTrack = data;
-      $scope.trackRef = ref.child("tracks/" + data.name);
+      $scope.trackRef = trackService.setTrackRef(data.name); //ref.child("tracks/" + data.name);
       $scope.trackData = $firebaseObject($scope.trackRef);
       $scope.comments = $firebaseArray($scope.trackRef.child("comments/"))
       $scope.loaded = true;
@@ -16,8 +14,12 @@ angular.module('TrackSuite')
   
   $scope.showAddCommentForm = false;
   
+  $scope.showTimestamp = function(timestamp) {
+    return moment(timestamp).fromNow()
+  }
+  
   var verifyAuth = function(func) {
-    var authData = mainService.verifyAuth(ref);
+    var authData = mainService.verifyAuth();
     if (authData) {
       func(authData);
     } else {
@@ -25,12 +27,16 @@ angular.module('TrackSuite')
     }
   }
   
-  $scope.showTimestamp = function(timestamp) {
-    return moment(timestamp).fromNow()
-  }
-  
-  $scope.verifyAuth = function() {
-    return mainService.verifyAuth(ref);
+  $scope.rateTrack = function(rating) {
+    var uid;
+    verifyAuth(function(authData) {
+      uid = authData.uid;
+    })
+    var path = $scope.trackRef.child('/ratings/' + uid);
+    console.log(path);
+    path.set({
+      [uid]: rating
+    })
   }
   
   $scope.addComment = function() {
@@ -40,7 +46,7 @@ angular.module('TrackSuite')
   
   $scope.submitComment = function() {
     verifyAuth(function(authData) {
-      var commentsRef = new Firebase($scope.trackRef + "/comments/");
+      var commentsRef = $scope.trackRef.child('/comments/');
       commentsRef.push({
         name: authData.facebook.displayName,
         comment: $scope.newComment,
@@ -55,7 +61,7 @@ angular.module('TrackSuite')
   // alerts user if no preview of track is available
   $scope.previewTrack = function(track) {
     if(!$scope.track.preview_url) {
-      alert('Sorry - there\'s no preview available for this song!')
+      alert('Sorry - there\'s no preview available for this track!')
     }
   }
   
