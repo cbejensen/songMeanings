@@ -34,9 +34,8 @@ angular.module('TrackSuite')
   }
   
   $scope.addComment = function() {
-    verifyAuth(function() {
-      $scope.showAddCommentForm = !$scope.showAddCommentForm;
-    });
+    $scope.showAddCommentForm = !$scope.showAddCommentForm;
+    $scope.focusInput = !$scope.focusInput;
   }
   
   $scope.submitComment = function() {

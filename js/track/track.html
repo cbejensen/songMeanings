@@ -32,7 +32,7 @@
 </div>
 
 <div id="comments" class="comments-container container-fluid">
-  <div class="comments-header row">
+  <div id="comments-header" class="comments-header row">
     <div class="comments-header-title h3 col-xs-6">COMMENTS</div>
     <div class="col-xs-6">
       <button class="btn btn-success btn-xs" id="addCom" ng-click="addComment()">
@@ -40,14 +40,16 @@
       </button>
     </div>
   </div>
-  <div id="add-comment-form"><!-- ng-show="showAddCommentForm"-->
+  
+  <div id="add-comment-form" ng-show="showAddCommentForm">
     <form>
       <div class="add-comment-msg">Insert your two cents</div>
-      <textarea id="test123" ng-model="newComment"></textarea>
+      <textarea id="test123" ng-model="newComment" focus="focusInput"></textarea>
       <button ng-click="submitComment()">Submit</button>
       <button ng-click="showAddCommentForm = false">Cancel</button>
     </form>
   </div>
+  
   <div ng-repeat="comment in comments | orderBy:'-timestamp'">
     <div class="comment-title row">
       <div class="comment-name col-xs-6">{{comment.name}}</div>
