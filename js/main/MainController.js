@@ -1,11 +1,19 @@
 angular.module('TrackSuite')
-.controller('MainController', function($scope, mainService, Spotify) {
+.controller('MainController', function($scope, mainService, Spotify, $firebaseArray) {
   
   $scope.spotifyAuth = function() {
     Spotify.login().then(function() {
       $scope.getPlaylist();
     }) 
   }
+  
+  $scope.getPlaylist = function() {
+    mainService.getPlaylist().then(function(data) {
+      $scope.playlist = data.tracks.items;
+      $scope.comments = mainService.getComments($scope.playlist);
+    });
+  }
+  $scope.getPlaylist();
   
   $scope.login = function(service) {
     mainService.login(service);
@@ -14,18 +22,5 @@ angular.module('TrackSuite')
   $scope.logout = function() {
     mainService.logout();
   }
-  
-  $scope.fbookLogin = function() {
-    console.log('before');
-    mainService.fbookLogin();
-    console.log('after')
-  }
-  
-  $scope.getPlaylist = function() {
-    mainService.getPlaylist().then(function(data) {
-      $scope.playlist = data.tracks.items;
-    });
-  }
-  $scope.getPlaylist();
   
 })

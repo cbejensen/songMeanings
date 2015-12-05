@@ -1,21 +1,25 @@
 <div class="container-fluid" ng-repeat="track in playlist">
-  <a ui-sref="track({id:'{{track.track.id}}'})">
   <div class="row">
     <div class="col col-sm-6">
+     <a ui-sref="track({id:'{{track.track.id}}'})">
       <div class="h2">
         {{track.track.name}}<br/>
         <small><strong>{{track.track.artists[0].name}}</strong></small>
       </div>
+      </a>
     </div>
-    <div class="main-track-stats col-xs-6 col-sm-3">
-      rating
-    </div>
-    <div class="main-track-stats col-xs-4 col-sm-2">
-      comments
-    </div>
-    </a>
-    <div class="main-track-stats col-xs-2 col-sm-1">
-      play
+    <div>
+      <div class="main-track-stats col-xs-6 col-sm-3">
+        ratings
+      </div>
+      <div class="main-track-stats col-xs-4 col-sm-2">
+        {{comments[$index].length}}
+        <div class="glyphicon glyphicon-comment conehead"></div>
+      </div>
+      </a>
+      <div class="main-track-stats col-xs-2 col-sm-1">
+        play
+      </div>
     </div>
   </div>
 </div>

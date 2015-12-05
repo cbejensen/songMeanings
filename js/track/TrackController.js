@@ -4,9 +4,9 @@ angular.module('TrackSuite')
   $scope.getTrack = function(id) {
     trackService.getTrack(id).then(function(data) {
       $scope.spotifyTrack = data;
-      $scope.trackRef = trackService.setTrackRef(data.name); //ref.child("tracks/" + data.name);
+      $scope.trackRef = trackService.tracksRef.child(data.name);
       $scope.trackData = $firebaseObject($scope.trackRef);
-      $scope.comments = $firebaseArray($scope.trackRef.child("comments/"))
+      $scope.comments = $firebaseArray($scope.trackRef.child("/comments/"))
       $scope.loaded = true;
     });
   }
@@ -18,25 +18,9 @@ angular.module('TrackSuite')
     return moment(timestamp).fromNow()
   }
   
-  var verifyAuth = function(func) {
-    var authData = mainService.verifyAuth();
-    if (authData) {
-      func(authData);
-    } else {
-      alert('Please log in first')
-    }
-  }
-  
   $scope.rateTrack = function(rating) {
-    var uid;
-    verifyAuth(function(authData) {
-      uid = authData.uid;
-    })
-    var path = $scope.trackRef.child('/ratings/' + uid);
-    console.log(path);
-    path.set({
-      [uid]: rating
-    })
+    var auth = mainService.verifyAuth();
+    trackService.rateTrack(auth, $scope.trackRef, rating)
   }
   
   $scope.addComment = function() {
@@ -45,17 +29,16 @@ angular.module('TrackSuite')
   }
   
   $scope.submitComment = function() {
-    verifyAuth(function(authData) {
-      var commentsRef = $scope.trackRef.child('/comments/');
-      commentsRef.push({
-        name: authData.facebook.displayName,
-        comment: $scope.newComment,
-        timestamp: Date.now()
-      })
-      //cleanup
-      $scope.showAddCommentForm = false;
-      $scope.newComment.msg = '';
-    })
+    var auth = mainService.verifyAuth();
+    var obj = {
+      name: auth.facebook.displayName,
+      comment: $scope.newComment,
+      timestamp: Date.now()
+    }
+    trackService.submitComment(auth, $scope.trackRef, obj);
+    //cleanup
+    $scope.showAddCommentForm = false;
+    $scope.newComment.msg = '';
   }
   
   // alerts user if no preview of track is available
