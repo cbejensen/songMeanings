@@ -10,19 +10,20 @@
         <div ng-click="previewTrack(spotifyTrack.id)" class="glyphicon glyphicon-play-circle"></div>
       </a>
     </div>
-    <div class="col-xs-5">Rating: <!--TODO: average rating-->
-      <button ng-click="rateTrack(1)">1</button>
-      <button ng-click="rateTrack(2)">2</button>
-      <button ng-click="rateTrack(3)">3</button>
-      <button ng-click="rateTrack(4)">4</button>
-      <button ng-click="rateTrack(5)">5</button>
-    </div>
-    <div class="testing col-xs-5">
+    <div class="testing col-xs-2">
       <a href="#/track/{{spotifyTrack.id}}#comments">
         <span>{{comments.length}}</span>
         <div class="glyphicon glyphicon-comment conehead"></div>
       </a>
     </div>
+    <div class="fa-stars col-xs-8"><!--TODO: average rating-->
+      <i class="fa fa-star-o" ng-click="rateTrack(1)"></i><!--
+      --><i class="fa fa-star-o" ng-click="rateTrack(2)"></i><!--
+      --><i class="fa fa-star-o" ng-click="rateTrack(3)"></i><!--
+      --><i class="fa fa-star-o" ng-click="rateTrack(4)"></i><!--
+      --><i class="fa fa-star-o" ng-click="rateTrack(5)"></i>
+    </div>
+    
   </div>
 </div>
 

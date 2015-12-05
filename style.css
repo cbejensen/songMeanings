@@ -20,6 +20,14 @@ a:hover {
   margin: 2% 5%;
 }
 
+.fa-star-o {
+  display: inline-block;
+  width: 30px;
+  font-size: 1.5em;
+  text-align: center;
+  cursor: pointer;
+}
+
 h1 {
   font-family: 'Nothing You Could Do', cursive;
 }
