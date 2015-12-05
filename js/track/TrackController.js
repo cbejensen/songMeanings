@@ -19,24 +19,32 @@ angular.module('TrackSuite')
   }
   
   $scope.rateTrack = function(rating) {
-    var auth = mainService.verifyAuth();
-    trackService.rateTrack(auth, $scope.trackRef, rating)
+    trackService.rateTrack($scope.trackRef, rating)
   }
   
   $scope.addComment = function() {
-    $scope.showAddCommentForm = !$scope.showAddCommentForm;
-    $scope.focusInput = !$scope.focusInput;
+    var auth = mainService.verifyAuth();
+    if(auth) {
+      $scope.showAddCommentForm = !$scope.showAddCommentForm;
+      $scope.focusInput = !$scope.focusInput;
+    } else {
+      alert('Please log in before adding a comment')
+    }
   }
   
   $scope.submitComment = function() {
     var auth = mainService.verifyAuth();
-    var obj = {
-      name: auth.facebook.displayName,
-      comment: $scope.newComment,
-      timestamp: Date.now()
+    if (auth) {
+      var obj = {
+        name: auth.facebook.displayName,
+        comment: $scope.newComment,
+        timestamp: Date.now()
+      }
+      trackService.submitComment($scope.trackRef, obj);
+    } else {
+      alert('Please log in before adding a comment')
     }
-    trackService.submitComment(auth, $scope.trackRef, obj);
-    //cleanup
+    //clean up
     $scope.showAddCommentForm = false;
     $scope.newComment.msg = '';
   }
