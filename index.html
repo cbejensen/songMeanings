@@ -9,11 +9,31 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body ng-controller="MainController">
+<!-- for testing purposes with chartlyrcis API
+ <input ng-model="lyricTest">
+<button ng-click="getLyrics()">GET</button>
+-->
  
   <div class="container-fluid">
     <button ng-click="spotifyAuth()">Log In</button>
-    <a ui-sref="main"><h1>TRACK SUITE</h1></a>
-    
+    <div class="row">
+      <div>
+        <div class="hr-container col-xs-4">
+          <hr class="hr-purple">
+          <hr class="hr-red">
+          <hr class="hr-blue">
+        </div>
+        <div class="main-title col-xs-4">
+          <a ui-sref="main"><h1>TRACK SUITE</h1></a>
+        </div>
+        <div class="hr-container col-xs-4">
+          <hr class="hr-purple">
+          <hr class="hr-red">
+          <hr class="hr-blue">
+        </div>
+      </div>
+    </div>
+        
     <button ng-click="login('facebook')">Login w/ Facebook</button>
     <button ng-click="logout()">Log Out</button>
     <div ui-view></div>

@@ -1,5 +1,39 @@
+/*
+MAIN COLORS
+
+purple
+  color: #9132b2;
+red
+  color: #f43030;
+blue
+  color: #4c6ecc;
+
+*/
+
 a:hover {
   text-decoration: none;
+}
+
+.hr-container {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.hr-purple, .hr-red, .hr-blue {
+  margin: 5px 0;
+  border-width: 4px;
+}
+
+.hr-purple {
+  border-color: #9132b2;
+}
+
+.hr-red {
+  border-color: #f43030;
+}
+
+.hr-blue {
+  border-color: #4c6ecc;
 }
 
 .comments-header > div {
@@ -21,10 +55,8 @@ a:hover {
 }
 
 .fa-star-o {
-  display: inline-block;
   width: 30px;
   font-size: 1.5em;
-  text-align: center;
   cursor: pointer;
 }
 
@@ -54,12 +86,40 @@ h1 {
   font-weight: bold;
 }
 
+.main-title {
+  text-align: center;
+  padding: 0;
+}
+
 .main-track-stats {
   line-height: 100px;
 }
 
 .highlight:hover {
   background-color: #f0f0f0;
+}
+
+.rating {
+  color: #a9a9a9;
+  margin: 0;
+  padding: 0;
+}
+
+ul.rating {
+  display: inline-block;
+}
+
+.rating li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 1px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.rating .filled {
+  color: #9132b2;
 }
 
 .track-stats {

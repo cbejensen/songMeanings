@@ -11,7 +11,7 @@ angular.module('TrackSuite')
     });
   }
   $scope.getTrack($stateParams.id);
-  
+  $scope.rating = 2;
   $scope.showAddCommentForm = false;
   
   $scope.showTimestamp = function(timestamp) {

@@ -17,11 +17,7 @@
       </a>
     </div>
     <div class="fa-stars col-xs-8"><!--TODO: average rating-->
-      <i class="fa fa-star-o" ng-click="rateTrack(1)"></i><!--
-      --><i class="fa fa-star-o" ng-click="rateTrack(2)"></i><!--
-      --><i class="fa fa-star-o" ng-click="rateTrack(3)"></i><!--
-      --><i class="fa fa-star-o" ng-click="rateTrack(4)"></i><!--
-      --><i class="fa fa-star-o" ng-click="rateTrack(5)"></i>
+      <star-rating class="star-rating" rating-value="rating" max="5" on-rating-selected="rateTrack(rating)"></star-rating>
     </div>
     
   </div>
