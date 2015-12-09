@@ -15,25 +15,18 @@
 -->
  
   <div class="container-fluid">
-    <button ng-click="spotifyAuth()">Log In</button>
-    <div class="row">
-      <div>
-        <div class="hr-container col-xs-4">
-          <hr class="hr-purple">
-          <hr class="hr-red">
-          <hr class="hr-blue">
-        </div>
-        <div class="main-title col-xs-4">
-          <a ui-sref="main"><h1>TRACK SUITE</h1></a>
-        </div>
-        <div class="hr-container col-xs-4">
-          <hr class="hr-purple">
-          <hr class="hr-red">
-          <hr class="hr-blue">
-        </div>
+       
+     <div class="main-title-row">
+      <div class="hr-container">
+        <hr class="hr-purple">
+        <hr class="hr-red">
+        <hr class="hr-blue">
+      </div>
+      <div class="main-title">
+        <a ui-sref="main">TRACK SUITE</a>
       </div>
     </div>
-        
+    <button ng-click="spotifyAuth()">Log In</button>
     <button ng-click="login('facebook')">Login w/ Facebook</button>
     <button ng-click="logout()">Log Out</button>
     <div ui-view></div>

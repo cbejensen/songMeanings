@@ -1,5 +1,5 @@
 angular.module('TrackSuite')
-.controller('TrackController', function($scope, $stateParams, trackService, mainService, $firebaseObject, $firebaseArray, Spotify) {
+.controller('TrackController', function($http, $scope, $stateParams, trackService, mainService, $firebaseObject, $firebaseArray, Spotify) {
   
   $scope.getTrack = function(id) {
     trackService.getTrack(id).then(function(data) {
@@ -11,7 +11,7 @@ angular.module('TrackSuite')
     });
   }
   $scope.getTrack($stateParams.id);
-  $scope.rating = 2;
+  $scope.rating = 3;
   $scope.showAddCommentForm = false;
   
   $scope.showTimestamp = function(timestamp) {
