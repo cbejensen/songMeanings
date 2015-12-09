@@ -15,17 +15,19 @@
 -->
  
   <div class="container-fluid">
-       
-     <div class="main-title-row">
-      <div class="hr-container">
-        <hr class="hr-purple">
-        <hr class="hr-red">
-        <hr class="hr-blue">
+    <a ui-sref="main" class="main-title-link">
+      <div class="main-title-row">
+        <div class="hr-container">
+          <hr class="hr-purple">
+          <hr class="hr-red">
+          <hr class="hr-blue">
+        </div>
+        <div class="main-title">
+          TRACK SUITE
+        </div>
       </div>
-      <div class="main-title">
-        <a ui-sref="main">TRACK SUITE</a>
-      </div>
-    </div>
+    </a>
+    
     <button ng-click="spotifyAuth()">Log In</button>
     <button ng-click="login('facebook')">Login w/ Facebook</button>
     <button ng-click="logout()">Log Out</button>

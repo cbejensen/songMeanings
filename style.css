@@ -89,6 +89,7 @@ h1 {
 }
 
 .main-title {
+  color: #9132b2;
   font-size: 35px;
   position: absolute;
   margin: 0;
@@ -97,6 +98,10 @@ h1 {
   border-right: solid white 5px;
   top: 0;
   right: 10%;
+}
+
+.main-title:hover {
+  color: #4c6ecc;
 }
 
 .main-title-row {
