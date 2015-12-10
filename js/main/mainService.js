@@ -4,20 +4,25 @@ angular.module('TrackSuite')
   var ref = new Firebase("https://song-meanings.firebaseio.com/");
   this.tracksRef = ref.child('tracks/')
   
+  this.searchSpotify = function(searchTerm) {
+    return Spotify.search(searchTerm, 'artist,album,track', {limit: 50}).then(function(data) {
+      return data
+    })
+  }
+  
   this.getPlaylist = function() {
     return Spotify.getPlaylist('1263870506', '3qBffDvEZBj0m5RDhxY8XD').then(function (data) {
       return data;
     });
   }
   
-  this.getComments = function(tracks) {
-    var comments = [];
-    console.log(tracks)
-    tracks.forEach(function(e, i){
-      var path = ref.child('tracks/' + e.track.name + '/comments')
-      comments.push($firebaseArray(path));
-    })
-    return comments;
+  this.getCommentCount = function(id) {
+    var commentCount = $firebaseArray(ref.child('tracks/' + id + '/comments'));
+    if(commentCount) {
+      return commentCount.length + 1;
+    } else {
+      return 0;
+    }
   }
   
   this.login = function(service) {

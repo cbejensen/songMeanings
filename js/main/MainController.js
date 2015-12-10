@@ -8,6 +8,13 @@ angular.module('TrackSuite')
 //      console.log(err);
 //    })
 //  }
+
+  $scope.searchSpotify = function() {
+    mainService.searchSpotify($scope.search).then(function(data) {
+      $scope.homeData = data;
+      console.log($scope.homeData)
+    })
+  }
   
   $scope.spotifyAuth = function() {
     Spotify.login().then(function() {
@@ -18,10 +25,16 @@ angular.module('TrackSuite')
   $scope.getPlaylist = function() {
     mainService.getPlaylist().then(function(data) {
       $scope.playlist = data.tracks.items;
-      $scope.comments = mainService.getComments($scope.playlist);
+      $scope.hey = function(i) {
+        return i;
+      }
     });
   }
   $scope.getPlaylist();
+  
+  $scope.getCommentCount = function(id) {
+    return mainService.getCommentCount(id);
+  }
   
   $scope.login = function(service) {
     mainService.login(service);

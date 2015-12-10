@@ -4,7 +4,7 @@ angular.module('TrackSuite')
   $scope.getTrack = function(id) {
     trackService.getTrack(id).then(function(data) {
       $scope.spotifyTrack = data;
-      $scope.trackRef = trackService.tracksRef.child(data.name);
+      $scope.trackRef = trackService.tracksRef.child(data.id);
       $scope.trackData = $firebaseObject($scope.trackRef);
       $scope.comments = $firebaseArray($scope.trackRef.child("/comments/"))
       $scope.loaded = true;
