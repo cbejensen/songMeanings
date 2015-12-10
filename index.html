@@ -13,9 +13,8 @@
  <input ng-model="lyricTest">
 <button ng-click="getLyrics()">GET</button>
 -->
- 
-  <div class="container-fluid">
-    <a ui-sref="main" class="main-title-link">
+   <button ng-click="spotifyAuth()">Log In</button>
+   <a ui-sref="main" class="main-title-link">
       <div class="main-title-row">
         <div class="hr-container">
           <hr class="hr-purple">
@@ -27,8 +26,7 @@
         </div>
       </div>
     </a>
-    
-    <button ng-click="spotifyAuth()">Log In</button>
+  <div class="container-fluid">
     <button ng-click="login('facebook')">Login w/ Facebook</button>
     <button ng-click="logout()">Log Out</button>
     <div ui-view></div>
