@@ -10,8 +10,9 @@ angular.module('TrackSuite')
 //  }
 
   $scope.searchSpotify = function() {
+    console.log($scope.search)
     mainService.searchSpotify($scope.search).then(function(data) {
-      $scope.homeData = data;
+      $scope.mainData = data;
       console.log($scope.homeData)
     })
   }
@@ -25,9 +26,6 @@ angular.module('TrackSuite')
   $scope.getPlaylist = function() {
     mainService.getPlaylist().then(function(data) {
       $scope.playlist = data.tracks.items;
-      $scope.hey = function(i) {
-        return i;
-      }
     });
   }
   $scope.getPlaylist();

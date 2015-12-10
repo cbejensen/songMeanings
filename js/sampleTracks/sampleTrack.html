@@ -1,0 +1,66 @@
+<div class="loading" ng-if="!loaded" >
+  <img src="http://www.video-force.com/wp-content/uploads/2015/10/loading.gif">
+</div>
+
+<h1>{{spotifyTrack.name}}</h1>
+<div class="track-stats container-fluid">
+  <div class="row">
+    <div class="col-xs-2">
+      <a href="{{spotifyTrack.preview_url}}">
+        <div ng-click="previewTrack(spotifyTrack.id)" class="glyphicon glyphicon-play-circle"></div>
+      </a>
+    </div>
+    <div class="testing col-xs-2">
+      <a href="#/sampleTracks/{{spotifyTrack.id}}#comments">
+        <span>{{comments.length}}</span>
+        <div class="glyphicon glyphicon-comment conehead"></div>
+      </a>
+    </div>
+    <div class="fa-stars col-xs-8"><!--TODO: average rating-->
+      <star-rating class="star-rating" rating-value="rating" max="5" on-rating-selected="rateTrack(rating)"></star-rating>
+    </div>
+    
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div ng-repeat="line in trackData.lyrics track by $index">
+    <div class="row highlight">
+      <div class="lyric-num col-xs-1">{{$index + 1}}</div>
+      <div><!-- this div improves copy/paste lyrics experience -->
+        <div class="lyric-line col-xs-10">{{line}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="comments" class="comments-container container-fluid">
+  <div id="comments-header" class="comments-header row">
+    <div class="comments-header-title h3 col-xs-6">COMMENTS</div>
+    <div class="col-xs-6">
+      <button class="btn btn-success btn-xs" id="addCom" ng-click="addComment()">
+        Add Comment
+      </button>
+    </div>
+  </div>
+  
+  <div id="add-comment-form" ng-show="showAddCommentForm">
+    <form>
+      <div class="add-comment-msg">Insert your two cents</div>
+      <textarea id="test123" ng-model="newComment" focus="focusInput"></textarea>
+      <button ng-click="submitComment()">Submit</button>
+      <button ng-click="showAddCommentForm = false">Cancel</button>
+    </form>
+  </div>
+  
+  <div ng-repeat="comment in comments | orderBy:'-timestamp'">
+    <div class="comment-title row">
+      <div class="comment-name col-xs-6">{{comment.name}}</div>
+      <div class="comment-date col-xs-6">{{showTimestamp(comment.timestamp)}}</div>
+    </div>
+    <div class="comment-msg">{{comment.comment}}</div>
+    <hr>
+  </div>
+</div>
+
+

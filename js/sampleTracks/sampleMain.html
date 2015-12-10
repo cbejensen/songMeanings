@@ -1,12 +1,10 @@
-<input ng-model="search" ng-change="searchSpotify()">
-
-<div class="container-fluid" ng-repeat="track in mainData.tracks.items">
+<div class="container-fluid" ng-repeat="track in playlist">
   <div class="row">
     <div class="col col-sm-6">
-     <a ui-sref="tracks({id:'{{track.id}}'})">
+     <a ui-sref="sampleTrack({id:'{{track.track.id}}'})">
       <div class="h2">
-        {{track.name}}<br/>
-        <small><strong>{{track.artists[0].name}}</strong></small>
+        {{track.track.name}}<br/>
+        <small><strong>{{track.track.artists[0].name}}</strong></small>
       </div>
       </a>
     </div>
