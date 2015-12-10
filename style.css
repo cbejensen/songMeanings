@@ -152,6 +152,18 @@ ul.rating {
   color: #9132b2;
 }
 
+.top-title-fill, .bottom-title-fill {
+  height: 25px;
+}
+
+.bottom-title-fill {
+  background-color: #9132b2;
+}
+
+.top-title-fill {
+  background-color: #4c6ecc;
+}
+
 .track-stats {
   margin: 20px 0;
 }
