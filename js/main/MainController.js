@@ -10,10 +10,8 @@ angular.module('TrackSuite')
 //  }
 
   $scope.searchSpotify = function() {
-    console.log($scope.search)
     mainService.searchSpotify($scope.search).then(function(data) {
       $scope.mainData = data;
-      console.log($scope.homeData)
     })
   }
   

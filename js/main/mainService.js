@@ -5,7 +5,7 @@ angular.module('TrackSuite')
   this.tracksRef = ref.child('tracks/')
   
   this.searchSpotify = function(searchTerm) {
-    return Spotify.search(searchTerm, 'artist,album,track', {limit: 50}).then(function(data) {
+    return Spotify.search(searchTerm, 'track', {limit: 50}).then(function(data) {
       return data
     })
   }

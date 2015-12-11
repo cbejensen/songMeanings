@@ -23,28 +23,26 @@ angular.module('TrackSuite')
   }
   
   $scope.addComment = function() {
-    var auth = mainService.verifyAuth();
-    if(auth) {
+    Spotify.getCurrentUser().then(function (data) {
+      console.log(data);
       $scope.showAddCommentForm = !$scope.showAddCommentForm;
       $scope.focusInput = !$scope.focusInput;
-    } else {
-      alert('Please log in before adding a comment')
-    }
+    }, function (error) {
+      alert('Please log in before adding a comment');
+    });
   }
   
   $scope.submitComment = function() {
-    var auth = mainService.verifyAuth();
-    if (auth) {
+    Spotify.getCurrentUser().then(function (data) {
       var obj = {
-        name: auth.facebook.displayName,
+        name: data.display_name,
         comment: $scope.newComment,
         timestamp: Date.now()
       }
       trackService.submitComment($scope.trackRef, obj);
-    } else {
-      alert('Please log in before adding a comment')
-    }
-    //clean up
+    }, function (error) {
+      alert('Please log in before adding a comment');
+    });
     $scope.showAddCommentForm = false;
     $scope.newComment.msg = '';
   }

@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('TrackSuite', ['ui.router', 'firebase', 'spotify'])
 .config(function (SpotifyProvider, $stateProvider, $urlRouterProvider) {
   SpotifyProvider.setClientId('456095fae6884551b223950e2a72f04a');
@@ -12,15 +14,10 @@ angular.module('TrackSuite', ['ui.router', 'firebase', 'spotify'])
       url: '/login',
       templateUrl: 'js/login/login.html'
     })
-    .state('sampleTracks', {
-      url: '/sampleTracks',
-      templateUrl: 'js/sampleTracks/sampleMain.html',
+    .state('sampleMain', {
+      url: '/sample-tracks',
+      templateUrl: 'js/sample/sampleMain.html',
       controller: 'MainController'
-    })
-    .state('sampleTrack', {
-      url: '/sampleTracks/:id',
-      templateUrl: 'js/sampleTracks/sampleTrack.html',
-      controller: 'SampleTrackController'
     })
     .state('main', {
       url: '/',

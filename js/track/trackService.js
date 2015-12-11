@@ -11,15 +11,14 @@ angular.module('TrackSuite')
   }
   
   this.rateTrack = function(trackRef, rating) {
-    var auth = mainService.verifyAuth();
-    if(auth) {
-      var uid = auth.uid;
+    Spotify.getCurrentUser().then(function (data) {
+      var id = data.uri;
       trackRef.child('/ratings/').update({
-        [uid]: rating
+        [id]: rating
       })
-    } else {
+    }, function (error) {
       alert('Please log in before rating a track');
-    }
+    });
   }
   
   this.submitComment = function(trackRef, obj) {
