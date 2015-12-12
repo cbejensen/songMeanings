@@ -4,6 +4,7 @@ angular.module('TrackSuite')
   window.onload = function () {
     var token = mainService.getToken();
     console.log('mainCtrl token', token)
+    localStorage.setItem('spotify-token', token);
     mainService.getPlaylist(token).then(function(data) {
       $scope.playlist = data.data.items;
     });

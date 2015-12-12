@@ -23,26 +23,34 @@ angular.module('TrackSuite')
   }
   
   $scope.addComment = function() {
-    Spotify.getCurrentUser().then(function (data) {
-      console.log(data);
+    $http({
+      method: 'GET',
+      url: 'https://api.spotify.com/v1/me',
+      headers: {
+        'Authorization': 'Bearer ' + window.localStorage['spotify-token']
+      }
+    }).then(function(data) {
       $scope.showAddCommentForm = !$scope.showAddCommentForm;
       $scope.focusInput = !$scope.focusInput;
-    }, function (error) {
-      alert('Please log in before adding a comment');
-    });
+    })
   }
   
   $scope.submitComment = function() {
-    Spotify.getCurrentUser().then(function (data) {
+    $http({
+      method: 'GET',
+      url: 'https://api.spotify.com/v1/me',
+      headers: {
+        'Authorization': 'Bearer ' + window.localStorage['spotify-token']
+      }
+    }).then(function(data) {
+      console.log('addComment:', data);
       var obj = {
-        name: data.display_name,
+        name: data.data.display_name,
         comment: $scope.newComment,
         timestamp: Date.now()
       }
-      trackService.submitComment($scope.trackRef, obj);
-    }, function (error) {
-      alert('Please log in before adding a comment');
-    });
+      $scope.trackRef.child('/comments/').push(obj);
+    })
     $scope.showAddCommentForm = false;
     $scope.newComment.msg = '';
   }

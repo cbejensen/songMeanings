@@ -18,28 +18,9 @@ a:visited {
   text-decoration: none; !important
 }
 
-.hr-container {
-  padding-top: 6px;
-  height: 50px;
-  width: 100%;
-  margin: none;
-}
-
-.hr-purple, .hr-red, .hr-blue {
-  margin: 6.5px 0;
-  border-width: 4px;
-}
-
-.hr-purple {
-  border-color: #9132b2;
-}
-
-.hr-red {
-  border-color: #f43030;
-}
-
-.hr-blue {
-  border-color: #4c6ecc;
+.bottom-title-fill {
+  background-color: #9132b2;
+  height: 3em;
 }
 
 .comments-header > div {
@@ -68,6 +49,30 @@ a:visited {
 
 h1 {
   font-family: 'Nothing You Could Do', cursive;
+}
+
+.hr-container {
+  padding-top: 6px;
+  height: 50px;
+  width: 100%;
+  margin: none;
+}
+
+.hr-purple, .hr-red, .hr-blue {
+  margin: 6.5px 0;
+  border-width: 4px;
+}
+
+.hr-purple {
+  border-color: #9132b2;
+}
+
+.hr-red {
+  border-color: #f43030;
+}
+
+.hr-blue {
+  border-color: #4c6ecc;
 }
 
 .loading {
@@ -125,6 +130,30 @@ h1 {
   line-height: 100px;
 }
 
+.navButton {
+  color: white;
+  font-size: 1.2em;
+  padding: 10px;
+  border: none;
+  font-variant: small-caps;
+  margin: 0;
+  display: block;
+  float: left;
+  background: none;
+}
+
+.navButton:hover {
+  color: #4c6ecc;
+}
+
+.navSplitter {
+  color: white;
+  font-size: 1.2em;
+  display: block;
+  float: left;
+  padding: 10px 0;
+}
+
 .highlight:hover {
   background-color: #f0f0f0;
 }
@@ -150,18 +179,6 @@ ul.rating {
 
 .rating .filled {
   color: #9132b2;
-}
-
-.top-title-fill, .bottom-title-fill {
-  height: 25px;
-}
-
-.bottom-title-fill {
-  background-color: #9132b2;
-}
-
-.top-title-fill {
-  background-color: #4c6ecc;
 }
 
 .track-stats {

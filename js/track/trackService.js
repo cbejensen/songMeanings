@@ -1,5 +1,5 @@
 angular.module('TrackSuite')
-.service('trackService', function(Spotify, $firebaseObject, mainService) {
+.service('trackService', function(Spotify, $http, $firebaseObject, mainService) {
   
   var ref = new Firebase("https://song-meanings.firebaseio.com/");
   this.tracksRef = ref.child('tracks/')
@@ -11,14 +11,20 @@ angular.module('TrackSuite')
   }
   
   this.rateTrack = function(trackRef, rating) {
-    Spotify.getCurrentUser().then(function (data) {
-      var id = data.uri;
+    $http({
+      method: 'GET',
+      url: 'https://api.spotify.com/v1/me',
+      headers: {
+        'Authorization': 'Bearer ' + window.localStorage['spotify-token']
+      }
+    }).then(function(data) {
+      console.log('rateTrack service', data);
+      var id = data.data.uri;
+      console.log('uri', id)
       trackRef.child('/ratings/').update({
         [id]: rating
       })
-    }, function (error) {
-      alert('Please log in before rating a track');
-    });
+    })
   }
   
   this.submitComment = function(trackRef, obj) {
