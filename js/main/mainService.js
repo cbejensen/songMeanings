@@ -1,5 +1,5 @@
 angular.module('TrackSuite')
-.service('mainService', function(Spotify, $firebaseObject, $firebaseArray) {
+.service('mainService', function(Spotify, $firebaseObject, $firebaseArray, $http) {
   
   var ref = new Firebase("https://song-meanings.firebaseio.com/");
   this.tracksRef = ref.child('tracks/')
@@ -12,10 +12,15 @@ angular.module('TrackSuite')
     } else if (hash) {
       // login success
       var token = window.location.hash.split('&')[0].split('=')[1];
-      console.log(token);
       window.location.replace('https://song-meanings.firebaseapp.com/#/');
       return token;
     }
+  }
+  
+  this.login = function() {
+    var windowObjectReference;
+    var strWindowFeatures = "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes";
+    windowObjectReference = window.open("https://accounts.spotify.com/authorize/?client_id=456095fae6884551b223950e2a72f04a&response_type=token&redirect_uri=https%3A%2F%2Fsong-meanings.firebaseapp.com&scope=user-read-private%20user-read-email", "_self", strWindowFeatures);
   }
   
   this.searchSpotify = function(searchTerm) {
@@ -24,10 +29,21 @@ angular.module('TrackSuite')
     })
   }
   
-  this.getPlaylist = function() {
-    return Spotify.getPlaylist('1263870506', '3qBffDvEZBj0m5RDhxY8XD').then(function (data) {
+  this.getPlaylist = function(token) {
+    console.log('getPlaylist received', token)
+    return $http({
+      method: 'GET',
+      url: 'https://api.spotify.com/v1/users/1263870506/playlists/3qBffDvEZBj0m5RDhxY8XD/tracks',
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    }).then(function(data, err) {
+      console.log(data);
       return data;
-    });
+    })
+//    return Spotify.getPlaylist('1263870506', '3qBffDvEZBj0m5RDhxY8XD').then(function (data) {
+//      return data;
+//    });
   }
   
   this.getCommentCount = function(id) {
@@ -37,12 +53,6 @@ angular.module('TrackSuite')
     } else {
       return 0;
     }
-  }
-  
-  this.login = function() {
-    var windowObjectReference;
-    var strWindowFeatures = "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes";
-    windowObjectReference = window.open("https://accounts.spotify.com/authorize/?client_id=456095fae6884551b223950e2a72f04a&response_type=token&redirect_uri=https%3A%2F%2Fsong-meanings.firebaseapp.com&scope=user-read-private%20user-read-email", "_self", strWindowFeatures);
   }
   
   this.logout = function() {

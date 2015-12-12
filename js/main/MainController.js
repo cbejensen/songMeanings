@@ -3,7 +3,10 @@ angular.module('TrackSuite')
   
   window.onload = function () {
     var token = mainService.getToken();
-    console.log('mainctrl token', token)
+    console.log('mainCtrl token', token)
+    mainService.getPlaylist(token).then(function(data) {
+      $scope.playlist = data.data.items;
+    });
   }
   
   $scope.login = function() {
@@ -25,13 +28,6 @@ angular.module('TrackSuite')
       $scope.getPlaylist();
     }) 
   }
-  
-  $scope.getPlaylist = function() {
-    mainService.getPlaylist().then(function(data) {
-      $scope.playlist = data.tracks.items;
-    });
-  }
-//  $scope.getPlaylist();
   
   $scope.getCommentCount = function(id) {
     return mainService.getCommentCount(id);
