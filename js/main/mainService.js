@@ -4,6 +4,20 @@ angular.module('TrackSuite')
   var ref = new Firebase("https://song-meanings.firebaseio.com/");
   this.tracksRef = ref.child('tracks/')
   
+  this.getToken = function() {
+    var hash = window.location.hash;
+    if (window.location.search.substring(1).indexOf("error") !== -1) {
+      // login failure
+      window.close();
+    } else if (hash) {
+      // login success
+      var token = window.location.hash.split('&')[0].split('=')[1];
+      console.log(token);
+      window.location.replace('https://song-meanings.firebaseapp.com/#/');
+      return token;
+    }
+  }
+  
   this.searchSpotify = function(searchTerm) {
     return Spotify.search(searchTerm, 'track', {limit: 50}).then(function(data) {
       return data
@@ -25,15 +39,10 @@ angular.module('TrackSuite')
     }
   }
   
-  this.login = function(service) {
-    ref.authWithOAuthPopup(service, function(error, authData, sessionOnly) {
-      if (error) {
-        console.log('Login Failed!', error);
-        alert('Log in failed - please try again');
-      } else {
-        console.log('Authenticated successfully:', authData);
-      }
-    });
+  this.login = function() {
+    var windowObjectReference;
+    var strWindowFeatures = "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes";
+    windowObjectReference = window.open("https://accounts.spotify.com/authorize/?client_id=456095fae6884551b223950e2a72f04a&response_type=token&redirect_uri=https%3A%2F%2Fsong-meanings.firebaseapp.com&scope=user-read-private%20user-read-email", "_self", strWindowFeatures);
   }
   
   this.logout = function() {

@@ -1,13 +1,16 @@
 angular.module('TrackSuite')
-.controller('MainController', function($http, $scope, mainService, Spotify, $firebaseArray) {
-//  FOR testing purposes with chartlyrics API
-//  $scope.getLyrics = function() {
-//    $http.get('http://api.chartlyrics.com/apiv1.asmx/SearchLyric?artist=' + $scope.lyricTest + '&song=sorry')
-//    .then(function(res, err) {
-//      console.log(res);
-//      console.log(err);
-//    })
-//  }
+.controller('MainController', function($http, $scope, $stateParams, mainService, Spotify, $firebaseArray) {
+  
+  window.onload = function () {
+    var token = mainService.getToken();
+    console.log('mainctrl token', token)
+  }
+  
+  $scope.login = function() {
+    mainService.login();
+    var test = window.location;
+    console.log(test);
+  }
 
   $scope.searchSpotify = function() {
     mainService.searchSpotify($scope.search).then(function(data) {
@@ -16,7 +19,9 @@ angular.module('TrackSuite')
   }
   
   $scope.spotifyAuth = function() {
+    console.log(Spotify.login())
     Spotify.login().then(function() {
+      console.log('log in success')
       $scope.getPlaylist();
     }) 
   }
@@ -26,14 +31,10 @@ angular.module('TrackSuite')
       $scope.playlist = data.tracks.items;
     });
   }
-  $scope.getPlaylist();
+//  $scope.getPlaylist();
   
   $scope.getCommentCount = function(id) {
     return mainService.getCommentCount(id);
-  }
-  
-  $scope.login = function(service) {
-    mainService.login(service);
   }
   
   $scope.logout = function() {
