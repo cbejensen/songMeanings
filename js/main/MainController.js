@@ -18,7 +18,8 @@ angular.module('TrackSuite')
 
   $scope.searchSpotify = function() {
     mainService.searchSpotify($scope.search).then(function(data) {
-      $scope.mainData = data;
+      $scope.searchData = data;
+      console.log(data);
     })
   }
   

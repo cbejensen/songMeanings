@@ -9,43 +9,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body ng-controller="MainController">
-<!-- for testing purposes with chartlyrcis API
- <input ng-model="lyricTest">
-<button ng-click="getLyrics()">GET</button>
--->
-      <div class="main-title-row">
-        <div class="hr-container">
-          <hr class="hr-purple">
-          <hr class="hr-red">
-          <hr class="hr-blue">
-        </div>
-        <a ui-sref="main" class="main-title-link">
-          <div class="main-title">
-            TRACK SUITE
-          </div>
-        </a>
+  <div class="main-title-row">
+    <div class="hr-container">
+      <hr class="hr-purple">
+      <hr class="hr-red">
+      <hr class="hr-blue">
+    </div>
+    <a ui-sref="main" class="main-title-link">
+      <div class="main-title">
+        TRACK SUITE
       </div>
-      <div class="bottom-title-fill">
-<!--
-        <div class="btn-group-xs" role="group" aria-label="navigation bar">
-          <button type="button" class="btn btn-default"><a ui-sref="main">Home</a></button>
-          <button type="button" class="btn btn-default" ng-click="login()">Login</button>
-          <a ui-sref="sampleMain"><button type="button" class="btn btn-default">Sample</button></a>
-        </div>
--->
-        <a ui-sref="main"><button class="navButton">Home</button></a>
-        <div class="navSplitter">|</div>
-        <button class="navButton" ng-click="login()">Login</button>
-        <div class="navSplitter">|</div>
-        <a ui-sref="sampleMain"><button class="navButton">Sample</button></a>
-      </div>
-  <div class="container-fluid">
-   <div class="searchContainer">
-  <input ng-model="search" ng-change="searchSpotify()" placeholder="Search any song">
-</div>
-    <div ui-view></div>
-    
+    </a>
   </div>
+  <div class="bottom-title-fill">
+    <a ui-sref="main"><button class="navButton">Home</button></a>
+    <div class="navSplitter">|</div>
+    <button class="navButton" ng-click="login()">Login</button>
+    <div class="navSplitter">|</div>
+    <a ui-sref="sampleMain"><button class="navButton">Sample</button></a>
+  </div>
+  
+  <div class="container-fluid">
+    <div ui-view></div>
+  </div>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>

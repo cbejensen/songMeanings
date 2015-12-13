@@ -2,7 +2,7 @@
   <input ng-model="search" ng-change="searchSpotify()" placeholder="Search any song">
 </div>
 
-<div class="container-fluid" ng-repeat="track in mainData.tracks.items">
+<div class="container-fluid" ng-repeat="track in searchData.tracks.items">
   <div class="row">
     <div class="col col-sm-6">
      <a ui-sref="tracks({id:'{{track.id}}'})">
