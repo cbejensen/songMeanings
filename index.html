@@ -40,6 +40,9 @@
         <a ui-sref="sampleMain"><button class="navButton">Sample</button></a>
       </div>
   <div class="container-fluid">
+   <div class="searchContainer">
+  <input ng-model="search" ng-change="searchSpotify()" placeholder="Search any song">
+</div>
     <div ui-view></div>
     
   </div>

@@ -181,6 +181,19 @@ ul.rating {
   color: #9132b2;
 }
 
+.searchContainer {
+  clear: both;
+  text-align: center;
+}
+
+.searchContainer input {
+  margin-top: 1em;
+  font-size: 2em;
+  border: solid black 3px;
+  width: 50%;
+  text-align: center;
+}
+
 .track-stats {
   margin: 20px 0;
 }
