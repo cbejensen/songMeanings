@@ -5,9 +5,10 @@ angular.module('TrackSuite')
     var token = mainService.getToken();
     console.log('mainCtrl token', token)
     localStorage.setItem('spotify-token', token);
-    mainService.getPlaylist(token).then(function(data) {
+    mainService.getPlaylist(token)
+    .then(function(data) {
       $scope.playlist = data.data.items;
-    });
+    })
   }
   
   $scope.login = function() {
@@ -15,11 +16,10 @@ angular.module('TrackSuite')
     var test = window.location;
     console.log(test);
   }
-
+  
   $scope.searchSpotify = function() {
     mainService.searchSpotify($scope.search).then(function(data) {
       $scope.searchData = data;
-      console.log(data);
     })
   }
   

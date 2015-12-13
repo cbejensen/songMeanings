@@ -1,8 +1,14 @@
 <div class="searchContainer">
-  <input ng-model="search" ng-change="searchSpotify()" placeholder="Search any song">
+  <input ng-model="search" ng-change="searchSpotify()" placeholder="Search for any song">
 </div>
 
-<div class="container-fluid" ng-repeat="track in searchData.tracks.items">
+<div class="waitingMessage" ng-if="!search">
+  <div>Your search results will show up here.</div>
+  <div class="red">Search <span class="purple">any song</span> you want.</div>
+  <div>No really, go ahead.</div>
+</div>
+
+<div class="container-fluid" ng-if="search" ng-repeat="track in searchData.tracks.items">
   <div class="row">
     <div class="col col-sm-6">
      <a ui-sref="tracks({id:'{{track.id}}'})">
@@ -18,7 +24,7 @@
       </div>
       <div class="main-track-stats col-xs-4 col-sm-2">
         <!--{{getCommentCount(track.track.id)}}-->
-        <div class="glyphicon glyphicon-comment conehead"></div>
+        <i class="fa fa-comment red"></i>
       </div>
       </a>
       <div class="main-track-stats col-xs-2 col-sm-1">

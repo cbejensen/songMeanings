@@ -37,13 +37,7 @@ angular.module('TrackSuite')
       headers: {
         'Authorization': 'Bearer ' + token
       }
-    }).then(function(data, err) {
-      console.log(data);
-      return data;
-    })
-//    return Spotify.getPlaylist('1263870506', '3qBffDvEZBj0m5RDhxY8XD').then(function (data) {
-//      return data;
-//    });
+    });
   }
   
   this.getCommentCount = function(id) {

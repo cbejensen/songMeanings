@@ -3,13 +3,18 @@
 angular.module('TrackSuite', ['ui.router', 'firebase', 'spotify'])
 .config(function ($stateProvider, $urlRouterProvider) {
   
-//  $urlRouterProvider.otherwise('/');
+  // $urlRouterProvider.otherwise('/#/');
   
   $stateProvider
     .state('sampleMain', {
       url: '/sample-tracks',
       templateUrl: 'js/sample/sampleMain.html',
-      controller: 'MainController'
+      controller: 'MainController',
+      resolve: {
+        test: function tellMe(mainService) {
+          mainService.getToken();
+        }
+      }
     })
     .state('main', {
       url: '/',

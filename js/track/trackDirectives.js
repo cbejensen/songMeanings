@@ -38,6 +38,7 @@ angular.module('TrackSuite')
         scope.onRatingSelected({
           rating : index + 1
         });
+        alert('Your ' + scope.ratingValue + ' star vote has been received!')
       };
 
       scope.$watch('ratingValue',
