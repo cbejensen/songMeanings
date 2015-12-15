@@ -3,18 +3,20 @@ angular.module('TrackSuite')
   
   window.onload = function () {
     var token = mainService.getToken();
-    console.log('mainCtrl token', token)
     localStorage.setItem('spotify-token', token);
     mainService.getPlaylist(token)
     .then(function(data) {
       $scope.playlist = data.data.items;
+      $scope.commentCounts = [];
+      data.data.items.forEach(function(e, i) {
+        $scope.commentCounts.push(mainService.getCommentCount(e.track.id));
+      })
     })
   }
   
   $scope.login = function() {
     mainService.login();
     var test = window.location;
-    console.log(test);
   }
   
   $scope.searchSpotify = function() {
@@ -24,7 +26,6 @@ angular.module('TrackSuite')
   }
   
   $scope.spotifyAuth = function() {
-    console.log(Spotify.login())
     Spotify.login().then(function() {
       console.log('log in success')
       $scope.getPlaylist();

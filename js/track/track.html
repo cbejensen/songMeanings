@@ -1,16 +1,17 @@
 <div class="loading" ng-if="!loaded" >
-  <img src="https://d13yacurqjgara.cloudfront.net/users/524613/screenshots/1629732/loader.gifhttps://45.media.tumblr.com/613837f6b679277b4d7ef5cee5427c27/tumblr_mla8v0CgVj1qgwp67o1_400.gif">
+  <img src="https://d13yacurqjgara.cloudfront.net/users/12755/screenshots/1037374/hex-loader2.gif">
 </div>
 
 <div class="track-header">
-  <h1 class="track-title blue">{{spotifyTrack.name}}</h1>
+  <h1 class="track-title">{{spotifyTrack.name}}</h1>
   <div class="track-stats container-fluid">
-    <div class="row">
+    <div class="track-rating row">
       <div class="fa-stars col-xs-12"><!--TODO: average rating-->
-        My rating:<star-rating class="star-rating" rating-value="rating" max="5" on-rating-selected="rateTrack(rating)"></star-rating>
+        <star-rating class="star-rating" rating-value="rating" max="5" on-rating-selected="rateTrack(rating)"></star-rating>
       </div>
     </div>
     <div class="row">
+     <div class="col-xs-4"></div>
       <div class="track-icon col-xs-2 red">
         <a href="{{spotifyTrack.preview_url}}">
           <i class="fa fa-play-circle-o red" ng-click="previewTrack(spotifyTrack.id)"></i>
@@ -18,10 +19,11 @@
       </div>
       <div class="track-icon col-xs-2 red">
         <a href="#/tracks/{{spotifyTrack.id}}#comments">
-          <span class="red">{{comments.length}}</span>
+          <span class="track-comment-count red">{{comments.length}}</span>
           <i class="fa fa-comment red"></i>
         </a>
       </div>
+      <div class="col-xs-4"></div>
     </div>
   </div>
 </div>
@@ -38,13 +40,9 @@
 </div>
 
 <div id="comments" class="comments-container container-fluid">
-  <div id="comments-header" class="comments-header row">
-    <div class="comments-header-title h3 col-xs-6">COMMENTS</div>
-    <div class="col-xs-6">
-      <button class="btn btn-primary" ng-click="addComment()">
-        Add Comment
-      </button>
-    </div>
+  <div class="comments-header row">
+    <div class="comments-header-title h4 col-xs-9">COMMENTS</div>
+    <div class="add-comment col-xs-3" ng-click="addComment()">Add Comment</div>
   </div>
   
   <div class="add-comment-form" ng-show="showAddCommentForm">
@@ -60,7 +58,7 @@
   
   <div ng-repeat="comment in comments | orderBy:'-timestamp'">
     <div class="comment-title row">
-      <div class="comment-name col-xs-6 purple">{{comment.name}}</div>
+      <div class="comment-name col-xs-6">{{comment.name}}</div>
       <div class="comment-date col-xs-6 blue">{{showTimestamp(comment.timestamp)}}</div>
     </div>
     <div class="comment-msg">{{comment.comment}}</div>

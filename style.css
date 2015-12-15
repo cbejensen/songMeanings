@@ -18,6 +18,11 @@ a:visited {
   text-decoration: none; !important
 }
 
+.add-comment {
+  font-size: .8em;
+  cursor: pointer;
+}
+
 .add-comment-form {
   width: 50%;
   margin: 10px auto;
@@ -30,7 +35,6 @@ a:visited {
 
 .add-comment-tag {
   font-weight: bold;
-  font-size: 1.2em;
 }
 
 .blue {
@@ -46,9 +50,18 @@ a:visited {
   margin-top: 20px;
 }
 
-.comments-header > div {
+.comments-header {
+  background-color: #f43030;
+  margin-bottom: 10px;
+}
+
+.comments-header div {
+  color: white;
   margin: 0;
-  line-height: 50px;
+}
+
+.comments-header title {
+  font-variant: small-caps;
 }
 
 .comments-header div:nth-child(even),
@@ -57,7 +70,7 @@ a:visited {
 }
 
 .comment-name {
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .comment-msg {
@@ -225,8 +238,20 @@ ul.rating {
   text-align: center;
 }
 
+.track-comment-count {
+  font-size: 0.7em;
+}
+
 .track-header {
   text-align: center;
+}
+
+.track-icon {
+  font-size: 2em;
+}
+
+.track-rating {
+  margin: 5px 0;
 }
 
 .track-stats {

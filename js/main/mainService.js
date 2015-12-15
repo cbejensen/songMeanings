@@ -41,12 +41,8 @@ angular.module('TrackSuite')
   }
   
   this.getCommentCount = function(id) {
-    var commentCount = $firebaseArray(ref.child('tracks/' + id + '/comments'));
-    if(commentCount) {
-      return commentCount.length + 1;
-    } else {
-      return 0;
-    }
+    console.log(id);
+    return $firebaseArray(ref.child('tracks/' + id + '/comments'));
   }
   
   this.logout = function() {
