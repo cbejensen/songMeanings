@@ -41,8 +41,25 @@ angular.module('TrackSuite')
   }
   
   this.getCommentCount = function(id) {
-    console.log(id);
     return $firebaseArray(ref.child('tracks/' + id + '/comments'));
+  }
+  
+  this.getRatings = function(id) {
+    ref.child('tracks/' + id + '/ratings/').on("value", function(snapshot) {
+      var obj = snapshot.val();
+      var sum = 0;
+      var counter = 0;
+      for (var key in obj) {
+        sum += obj[key];
+        counter++;
+      }
+      var total = sum / counter;
+      var average = Math.round(total * 10) / 10;
+      return average;
+    }, function (errorObject) {
+      console.log("The read failed: " + errorObject.code);
+    });
+    //return $firebaseArray(ref.child('tracks/' + id + '/ratings'));
   }
   
   this.logout = function() {

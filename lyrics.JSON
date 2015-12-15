@@ -1,24 +1,224 @@
 {
-  "tracks": {
-    "3ACnarSkTKiOTj4rsnFkgf": {
-      "title": "Sorry",
-      "lyrics": ["You gotta go and get angry at all of my honesty","You know I try but I don't do too well with apologies","I hope I don't run out of time, could someone call the referee?","I just need one more shot at forgiveness","","I know you know that I made those mistakes maybe once or twice","And by once or twice I mean maybe a couple hundred times","So let me, oh let me redeem, oh redeem myself tonight","'Cause I just need one more shot at second chances","","Is it too late now to say sorry?","'Cause I'm missing more than just your body","Is it too late now to say sorry?","Yeah I know that I let you down","Is it too late to say I'm sorry now?","I'm sorry yeah, sorry yeah, sorry","Yeah I know that I let you down","Is it too late to say I'm sorry now?","","I'll take every single piece of the blame if you want me to","But you know that there is no innocent one in this game for two","I'll go, I'll go and then","You go, you go out and spill the truth","Can we both say the words, say forget this?","","I'm not just trying to get you back on me","Cause I'm missing more than just your body","Is it too late now to say sorry?","Yeah I know that I let you down","Is it too late to say I'm sorry now?"]
+  "tracks" : {
+    "0ENSn4fwAbCGeFGVUbXEU3" : {
+      "comments" : {
+        "-K5YcogKjRPDASfblFF0" : {
+          "comment" : "Testing this out",
+          "name" : "Christian Jensen",
+          "timestamp" : 1450149366606
+        },
+        "-K5Z-Mj2qrrszU4kl7o4" : {
+          "comment" : "I LOVE this song, and her pensive lyrics. She is the bomb!!",
+          "timestamp" : 1450155539433
+        }
+      },
+      "lyrics" : [ "Hello, it's me", "I was wondering if after all these years you'd like to meet", "To go over everything", "They say that time's supposed to heal ya", "But I ain't done much healing", "", "Hello, can you hear me?", "I'm in California dreaming about who we used to be", "When we were younger and free", "I've forgotten how it felt before the world fell at our feet", "", "There's such a difference between us", "And a million miles", "", "Hello from the other side", "I must've called a thousand times", "To tell you I'm sorry for everything that I've done", "But when I call you never seem to be home", "", "Hello from the outside", "At least I can say that I've tried", "To tell you I'm sorry for breaking your heart", "But it don't matter, it clearly doesn't tear you apart anymore", "", "Hello, how are you?", "It's so typical of me to talk about myself, I'm sorry", "I hope that you're well", "Did you ever make it out of that town where nothing ever happened?", "", "It's no secret that the both of us", "Are running out of time" ],
+      "ratings" : {
+        "spotify:user:12154282326" : 3,
+        "spotify:user:1263870506" : 4,
+        "spotify:user:jodiejensen" : 5
+      },
+      "title" : "Hello"
     },
-    "0ENSn4fwAbCGeFGVUbXEU3": {
-      "title": "Hello",
-      "lyrics": ["Hello, it's me","I was wondering if after all these years you'd like to meet","To go over everything","They say that time's supposed to heal ya","But I ain't done much healing","","Hello, can you hear me?","I'm in California dreaming about who we used to be","When we were younger and free","I've forgotten how it felt before the world fell at our feet","","There's such a difference between us","And a million miles","","Hello from the other side","I must've called a thousand times","To tell you I'm sorry for everything that I've done","But when I call you never seem to be home","","Hello from the outside","At least I can say that I've tried","To tell you I'm sorry for breaking your heart","But it don't matter, it clearly doesn't tear you apart anymore","","Hello, how are you?","It's so typical of me to talk about myself, I'm sorry","I hope that you're well","Did you ever make it out of that town where nothing ever happened?","","It's no secret that the both of us","Are running out of time"]
+    "1lfjTOtTRUDkzcmahA4lcs" : {
+      "comments" : {
+        "-K5YxUjjdtO4ykLELmx0" : {
+          "comment" : "I am always filled with joy to hear this song begin!!",
+          "timestamp" : 1450154785819
+        }
+      },
+      "ratings" : {
+        "spotify:user:jodiejensen" : 5
+      }
     },
-    "3DnzEB8Ffnp5sjnCbOugUX": {
-      "title": "Perfect",
-      "lyrics": ["perfect","ya"]
+    "1nzcKrYRTWZJEwWzyAU8XM" : {
+      "lyrics" : ["Get your motor runnin'","Head out on the highway",
+"Lookin' for adventure",
+"And whatever comes our way",
+"Yeah Darlin' go make it happen",
+"Take the world in a love embrace",
+"Fire all of your guns at once",
+"And explode into space",
+"",
+"I like smoke and lightning",
+"Heavy metal thunder",
+"Racin' with the wind",
+"And the feelin' that I'm under",
+"Yeah Darlin' go make it happen",
+"Take the world in a love embrace",
+"Fire all of your guns at once",
+"And explode into space",
+"",
+"Like a true nature's child",
+"We were born, born to be wild",
+"We can climb so high",
+"I never wanna die",
+"",
+"Born to be wild"
+],
+      "ratings" : {
+        "spotify:user:12154282326" : 1,
+        "spotify:user:1263870506" : 2
+      },
+      "title" : "Born To Be Wild"
     },
-    "6RsWqX8zABZLhZydXxEFOm": {
-      "title": "Can't Feel My Face",
-      "lyrics": ["face","ya"]
+    "2EiGECydkS2M8OCcRHQZhT" : {
+      "comments" : {
+        "-K5OiF1kyjQdn8IoqSyd" : {
+          "comment" : "I appreciate Th deep meaning of this song, and am saddened by the pain expressed in the lyrics, but I like it!",
+          "timestamp" : 1449983017197
+        }
+      },
+      "ratings" : {
+        "spotify:user:jodiejensen" : 5
+      }
     },
-    "1nzcKrYRTWZJEwWzyAU8XM": {
-      "title": "Born To Be Wild",
-      "lyrics": ["wild","ya"]
+    "3ACnarSkTKiOTj4rsnFkgf" : {
+      "comments" : {
+        "-K5DtE_l5FmRZFuzv_Hi" : {
+          "comment" : "I think he feels sorry about something... maybe he ate someone's sandwich?",
+          "name" : "Christian Jensen",
+          "timestamp" : 1449801351708
+        },
+        "-K5Mquzj1RDmSYMUn4Gr" : {
+          "comment" : "Yes, that must be right.",
+          "name" : "Christian Jensen",
+          "timestamp" : 1449951735943
+        },
+        "-K5NtzoVUaf69bwIfPRQ" : {
+          "comment" : "Lines 20-24 make me think he lied to somebody close to him",
+          "name" : "Christian Jensen",
+          "timestamp" : 1449969319291
+        },
+        "-K5Z-3aRSB7cBpcEaELg" : {
+          "comment" : "He sounds pretty pathetic! Poor kid!",
+          "timestamp" : 1450155461057
+        },
+        "-K5Z0BMQcVBOQjctfMZI" : {
+          "comment" : "Poor, poor Justin...",
+          "timestamp" : 1450155755760
+        }
+      },
+      "lyrics" : [ "You gotta go and get angry at all of my honesty", "You know I try but I don't do too well with apologies", "I hope I don't run out of time, could someone call the referee?", "I just need one more shot at forgiveness", "", "I know you know that I made those mistakes maybe once or twice", "And by once or twice I mean maybe a couple hundred times", "So let me, oh let me redeem, oh redeem myself tonight", "'Cause I just need one more shot at second chances", "", "Is it too late now to say sorry?", "'Cause I'm missing more than just your body", "Is it too late now to say sorry?", "Yeah I know that I let you down", "Is it too late to say I'm sorry now?", "I'm sorry yeah, sorry yeah, sorry", "Yeah I know that I let you down", "Is it too late to say I'm sorry now?", "", "I'll take every single piece of the blame if you want me to", "But you know that there is no innocent one in this game for two", "I'll go, I'll go and then", "You go, you go out and spill the truth", "Can we both say the words, say forget this?", "", "I'm not just trying to get you back on me", "Cause I'm missing more than just your body", "Is it too late now to say sorry?", "Yeah I know that I let you down", "Is it too late to say I'm sorry now?" ],
+      "ratings" : {
+        "spotify:user:12154282326" : 5,
+        "spotify:user:1263870506" : 4,
+        "spotify:user:jodiejensen" : 3
+      },
+      "title" : "Sorry"
+    },
+    "3DnzEB8Ffnp5sjnCbOugUX" : {
+      "comments" : {
+        "-K5YvuHORowz4rhRUHLQ" : {
+          "comment" : "This song is anything BUT perfect!",
+          "name" : "Christian Jensen",
+          "timestamp" : 1450154370014
+        },
+        "-K5Yvw87ap3OR1emhw81" : {
+          "comment" : "Ya! Totally!",
+          "name" : "Christian Jensen",
+          "timestamp" : 1450154377614
+        }
+      },
+      "lyrics" : ["I might never be your knight in shining armor",
+"I might never be the one you take home to mother",
+"And I might never be the one who brings you flowers",
+"But I can be the one, be the one tonight",
+"",
+"When I first saw you",
+"From across the room",
+"I could tell that you were curious, oh, yeah",
+"Girl, I hope you’re sure",
+"What you're looking for",
+"'Cause I'm not good at making promises",
+"",
+"But if you like causing trouble up in hotel rooms",
+"And if you like having secret little rendezvous",
+"If you like to do the things you know that we shouldn’t do",
+"Baby, I'm perfect",
+"Baby, I'm perfect for you",
+"And if you like midnight driving with the windows down",
+"And if you like going places we can’t even pronounce",
+"If you like to do whatever you've been dreaming about",
+"Baby, you're perfect",
+"Baby, you're perfect",
+"So let's start right now",
+"",
+"I might never be the hand you put your heart in",
+"Or the arms that hold you any time you want them",
+"But that don’t mean that we can’t live here in the moment",
+"'Cause I can be the one you love from time to time",
+"",
+"And if you like cameras flashing every time we go out, oh, yeah",
+"And if you're looking for someone to write your breakup songs about",
+"Baby, I'm perfect",
+"Baby, we're perfect"
+],
+      "ratings" : {
+        "spotify:user:12154282326" : 2,
+        "spotify:user:1263870506" : 1
+      },
+      "title" : "Perfect"
+    },
+    "3eSQXK8lkG9B8QWSeVmm2I" : {
+      "comments" : {
+        "-K5Oepdux7o3bNna2kY0" : {
+          "comment" : "This song is sweet!",
+          "name" : "Benjamin D Jensen II",
+          "timestamp" : 1449982121575
+        }
+      },
+      "ratings" : {
+        "spotify:user:1244049191" : 5
+      }
+    },
+    "69bp2EbF7Q2rqc5N3ylezZ" : {
+      "comments" : {
+        "-K5Nu3bOzbyd3FztwXqO" : {
+          "comment" : "test",
+          "name" : "Christian Jensen",
+          "timestamp" : 1449969338933
+        }
+      },
+      "ratings" : {
+        "spotify:user:1263870506" : 4
+      }
+    },
+    "6RsWqX8zABZLhZydXxEFOm" : {
+      "comments" : {
+        "-K5Z20leSGhXEm_szQn5" : {
+          "comment" : "Fun dance song!",
+          "name" : "jodiejensen",
+          "timestamp" : 1450156236676
+        }
+      },
+      "lyrics" : [
+"And I know she'll be the death of me, at least we'll both be numb",
+"And she'll always get the best of me, the worst is yet to come",
+"But at least we'll both be beautiful and stay forever young",
+"This I know, (yeah) this I know",
+"",
+"She told me, \"Don't worry about it.",
+"She told me, \"Don't worry no more.",
+"We both knew we can't go without it",
+"She told me you'll never be alone-oh-oh, whoa",
+"",
+"I can't feel my face when I'm with you",
+"But I love it, but I love it, oh",
+"I can't feel my face when I'm with you",
+"But I love it, but I love it, oh",
+"",
+"And I know she'll be the death of me, at least we'll both be numb",
+"And she'll always get the best of me, the worst is yet to come",
+"All the misery was necessary when we're deep in love",
+"Yes I know (yes I know), girl, I know"
+],
+      "ratings" : {
+        "spotify:user:12154282326" : 5,
+        "spotify:user:1263870506" : 3,
+        "spotify:user:jodiejensen" : 5
+      },
+      "title" : "Can't Feel My Face"
     }
   }
 }

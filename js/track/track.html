@@ -12,16 +12,14 @@
     </div>
     <div class="row">
      <div class="col-xs-4"></div>
-      <div class="track-icon col-xs-2 red">
-        <a href="{{spotifyTrack.preview_url}}">
-          <i class="fa fa-play-circle-o red" ng-click="previewTrack(spotifyTrack.id)"></i>
+     <div class="track-icon col-xs-2 red">
+        <a href="#/tracks/{{spotifyTrack.id}}#comments">
+          <span class="track-comment-count">{{comments.length}}</span>
+          <i class="fa fa-comment red"></i>
         </a>
       </div>
       <div class="track-icon col-xs-2 red">
-        <a href="#/tracks/{{spotifyTrack.id}}#comments">
-          <span class="track-comment-count red">{{comments.length}}</span>
-          <i class="fa fa-comment red"></i>
-        </a>
+        <i class="fa fa-play-circle-o red" ng-click="previewTrack(spotifyTrack.preview_url)"></i>
       </div>
       <div class="col-xs-4"></div>
     </div>
@@ -41,8 +39,8 @@
 
 <div id="comments" class="comments-container container-fluid">
   <div class="comments-header row">
-    <div class="comments-header-title h4 col-xs-9">COMMENTS</div>
-    <div class="add-comment col-xs-3" ng-click="addComment()">Add Comment</div>
+    <div class="comments-header-title h4 col col-xs-9">COMMENTS</div>
+    <div class="add-comment col col-xs-3" ng-click="addComment()">Add Comment</div>
   </div>
   
   <div class="add-comment-form" ng-show="showAddCommentForm">

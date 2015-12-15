@@ -10,6 +10,10 @@ blue
 
 */
 
+a {
+  color: black;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -60,7 +64,7 @@ a:visited {
   margin: 0;
 }
 
-.comments-header title {
+.comments-header-title {
   font-variant: small-caps;
 }
 
@@ -76,6 +80,10 @@ a:visited {
 .comment-msg {
   margin: 2% 5%;
   font-size: 1.2em;
+}
+
+.fa-play-circle-o {
+  cursor: pointer;
 }
 
 .fa-star-o {
@@ -240,6 +248,7 @@ ul.rating {
 
 .track-comment-count {
   font-size: 0.7em;
+  color: black;
 }
 
 .track-header {

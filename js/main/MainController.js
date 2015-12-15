@@ -10,13 +10,21 @@ angular.module('TrackSuite')
       $scope.commentCounts = [];
       data.data.items.forEach(function(e, i) {
         $scope.commentCounts.push(mainService.getCommentCount(e.track.id));
-      })
+      });
     })
   }
   
   $scope.login = function() {
     mainService.login();
     var test = window.location;
+  }
+  
+  $scope.previewTrack = function(url) {
+    if(url) {
+      window.open(url);
+    } else {
+      alert('Sorry - there\'s no preview available for this track!')
+    }
   }
   
   $scope.searchSpotify = function() {
@@ -30,10 +38,6 @@ angular.module('TrackSuite')
       console.log('log in success')
       $scope.getPlaylist();
     }) 
-  }
-  
-  $scope.getCommentCount = function(id) {
-    return mainService.getCommentCount(id);
   }
   
   $scope.logout = function() {

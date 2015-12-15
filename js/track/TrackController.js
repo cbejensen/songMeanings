@@ -44,8 +44,14 @@ angular.module('TrackSuite')
       }
     }).then(function(data) {
       console.log('addComment:', data);
+      var name;
+      if (data.data.display_name) {
+        name = data.data.display_name;
+      } else {
+        name = data.data.id;
+      }
       var obj = {
-        name: data.data.display_name,
+        name: name,
         comment: $scope.newComment,
         timestamp: Date.now()
       }
@@ -56,8 +62,10 @@ angular.module('TrackSuite')
   }
   
   // alerts user if no preview of track is available
-  $scope.previewTrack = function(track) {
-    if(!$scope.track.preview_url) {
+  $scope.previewTrack = function(url) {
+    if(url) {
+      window.open(url);
+    } else {
       alert('Sorry - there\'s no preview available for this track!')
     }
   }

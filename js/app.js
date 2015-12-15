@@ -1,4 +1,4 @@
-//'use strict';
+'use strict';
 
 angular.module('TrackSuite', ['ui.router', 'firebase', 'spotify'])
 .config(function ($stateProvider, $urlRouterProvider) {
